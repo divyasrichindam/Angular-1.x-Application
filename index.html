@@ -1,0 +1,17 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div ng-app="myapp">
+            <div ng-controller = "mycntrl">
+                <h1>{{pageTitle}}</h1>
+                <p ng-repeat = "data in blogs"></p>
+                {{data.title+','+data.author.username}}
+            </div>
+        </div>
+        <script src = "https://code.angularjs.org/1.5.5/angular.min.js"></script>
+        <script src = "mean.js"></script>
+
+        </form>
+    </body>
+</html>

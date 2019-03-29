@@ -1,0 +1,1 @@
+New content for newfile.txtThis data needs to be added to the file

@@ -1,0 +1,24 @@
+<head>
+    <title>NodeJS-Socket</title>
+    <script src="socket.io/socket.io.js"></script>
+    <!-- We have to use the socket package to use sockets. -->
+</head>
+
+<body>
+    <h1>NodeJS - Socket</h1>
+    <p id = "p1"></p>
+    <input type = "text" id = "txtbx" placeholder="Type your message">
+    <button id = "btn">Send</button>
+    <script>
+        var socket = io.connect()
+        // Using the above command it makes a call to the server immediately. It is a connection request that client is sending to the server.
+        socket.on("data_to_client", function (data) {
+            document.getElementById("p1").innerHTML += data+ "<br/>";
+        //Used to receive the data from the server.
+        });
+
+        document.getElementById("btn").addEventListener("click" , function() {
+            socket.emit("data_to_server", document.getElementById("txtbx").value);
+        });
+    </script>
+</body>
